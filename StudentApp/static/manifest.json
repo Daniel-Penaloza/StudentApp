@@ -1,6 +1,6 @@
 {
-  "name": "student_app",
-  "short_name": "studentapp",
+  "name": "passtracker",
+  "short_name": "passtracker",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",

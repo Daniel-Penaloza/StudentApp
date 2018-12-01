@@ -1,54 +1,58 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="">
+            <Strong class="logo-yellow">PASS</Strong><Strong class="logo-blue">TRACKER</Strong>
+          </a>
+        <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <!--
+    Using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
+    -->
+      <div class="navbar-menu" :class="{ 'is-active': showNav }">
+          <a class="navbar-item" href="/about">
+              <strong>Inicio</strong> 
+          </a>
+      </div>
+    </nav>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data: function () {
+    return {
+      showNav: false
+    }
+  }
 }
 </script>
 
 <style>
 body {
   margin: 0;
+  
 }
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+.logo-yellow{
+  color: #efd834;
+}
+.logo-blue{
+  color: #2C4D7A;
 }
 
 main {
   text-align: center;
   margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
+} 
+html{
+  background-color: #2C4D7A;
 }
 </style>
